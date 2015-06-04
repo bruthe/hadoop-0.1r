@@ -49,8 +49,8 @@ import org.apache.hadoop.util.LogFormatter;
  * the protocol instance is transmitted.
  */
 public class RPC {
-  private static final Logger LOG =
-    LogFormatter.getLogger("org.apache.hadoop.ipc.RPC");
+	
+  private static final Logger LOG = LogFormatter.getLogger("org.apache.hadoop.ipc.RPC");
 
   private RPC() {}                                  // no public ctor
 

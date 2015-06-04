@@ -49,8 +49,8 @@ import org.apache.hadoop.io.UTF8;
  * @see Server
  */
 public class Client {
-  public static final Logger LOG =
-    LogFormatter.getLogger("org.apache.hadoop.ipc.Client");
+	
+  public static final Logger LOG = LogFormatter.getLogger("org.apache.hadoop.ipc.Client");
 
   private Hashtable connections = new Hashtable();
 

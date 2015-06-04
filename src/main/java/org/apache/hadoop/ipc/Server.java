@@ -48,8 +48,8 @@ import org.apache.hadoop.io.UTF8;
  * @see org.apache.hadoop.ipc.Client
  */
 public abstract class Server {
-  public static final Logger LOG =
-    LogFormatter.getLogger("org.apache.hadoop.ipc.Server");
+	
+  public static final Logger LOG = LogFormatter.getLogger("org.apache.hadoop.ipc.Server");
 
   private static final ThreadLocal SERVER = new ThreadLocal();
 
