@@ -48,15 +48,13 @@ import org.apache.hadoop.util.LogFormatter;
  * may specify additional resources.
  */
 public class Configuration {
-  private static final Logger LOG =
-    LogFormatter.getLogger("org.apache.hadoop.conf.Configuration");
+  private static final Logger LOG = LogFormatter.getLogger("org.apache.hadoop.conf.Configuration");
 
   private ArrayList defaultResources = new ArrayList();
   private ArrayList finalResources = new ArrayList();
 
   private Properties properties;
-  private ClassLoader classLoader = 
-    Thread.currentThread().getContextClassLoader();
+  private ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 
   /** A new configuration. */
   public Configuration() {
@@ -337,9 +335,7 @@ public class Configuration {
     return properties;
   }
 
-  private void loadResources(Properties props,
-                             ArrayList resources,
-                             boolean reverse, boolean quiet) {
+  private void loadResources(Properties props, ArrayList resources, boolean reverse, boolean quiet) {
     ListIterator i = resources.listIterator(reverse ? resources.size() : 0);
     while (reverse ? i.hasPrevious() : i.hasNext()) {
       loadResource(props, reverse ? i.previous() : i.next(), quiet);
@@ -348,8 +344,7 @@ public class Configuration {
 
   private void loadResource(Properties properties, Object name, boolean quiet) {
     try {
-      DocumentBuilder builder =
-        DocumentBuilderFactory.newInstance().newDocumentBuilder();
+      DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
       Document doc = null;
 
       if (name instanceof String) {               // a CLASSPATH resource
