@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+  <name>fs.default.name</name>
+  <value>local:9000</value>
+  <!-- <value>hdfs://local:9000</value> -->
+  <description>The name of the default file system.  Either the literal string "local" or a host:port for DFS.</description>
+</property>
+
+<property>
+  <name>dfs.name.dir</name>
+  <value>H:/job/springspace/hadoop_research/hadoop-0.1r/data/namenode</value>
+  <description>Determines where on the local filesystem the DFS name node should store the name table.</description>
+</property>
+
+<property>
+  <name>dfs.data.dir</name>
+  <value>H:/job/springspace/hadoop_research/hadoop-0.1r/data/datanode</value>
+  <description>Determines where on the local filesystem an DFS data node
+  should store its blocks.  If this is a comma- or space-delimited
+  list of directories, then data will be stored in all named
+  directories, typically on different devices.</description>
+</property>
+
+<property>
+  <name>dfs.replication</name>
+  <value>1</value>
+  <description>How many copies we try to have at all times. The actual
+  number of replications is at max the number of datanodes in the cluster.</description>
+</property>
+
+<property>
+  <name>mapred.local.dir</name>
+  <value>H:/job/springspace/hadoop_research/hadoop-0.1r/data/mapred_local</value>
+  <description>The local directory where MapReduce stores intermediate
+  data files.  May be a space- or comma- separated list of
+  directories on different devices in order to spread disk i/o.
+  </description>
+</property>
+
+<property>
+  <name>mapred.system.dir</name>
+  <value>H:/job/springspace/hadoop_research/hadoop-0.1r/data/mapred_system</value>
+  <description>The shared directory where MapReduce stores control files.
+  </description>
+</property>
+
+<property>
+  <name>mapred.temp.dir</name>
+  <value>H:/job/springspace/hadoop_research/hadoop-0.1r/data/mapred_temp</value>
+  <description>A shared directory for temporary files.
+  </description>
+</property>
+
+<property>
+  <name>system.charset</name>
+  <value>GB2312</value>
+  <description>The charset of local system</description>
+</property>
+
+</configuration>
