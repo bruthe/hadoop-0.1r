@@ -98,9 +98,7 @@ public class DataNode implements FSConstants, Runnable {
      * 'dataDir' is where the blocks are stored.
      */
     public DataNode(Configuration conf, String datadir) throws IOException {
-        this(InetAddress.getLocalHost().getHostName(), 
-             new File(datadir),
-             createSocketAddr(conf.get("fs.default.name", "local")), conf);
+        this(InetAddress.getLocalHost().getHostName(), new File(datadir), createSocketAddr(conf.get("fs.default.name", "local")), conf);
     }
 
     /**

@@ -75,9 +75,7 @@ public class NameNode implements ClientProtocol, DatanodeProtocol, FSConstants {
      * Create a NameNode at the default location
      */
     public NameNode(Configuration conf) throws IOException {
-        this(getDir(conf),
-             DataNode.createSocketAddr
-             (conf.get("fs.default.name", "local")).getPort(), conf);
+        this(getDir(conf),DataNode.createSocketAddr(conf.get("fs.default.name", "local")).getPort(), conf);
     }
 
     /**
