@@ -125,13 +125,10 @@ public abstract class Server {
     public Connection(Socket socket) throws IOException {
       this.socket = socket;
       socket.setSoTimeout(timeout);
-      this.in = new DataInputStream
-        (new BufferedInputStream(socket.getInputStream()));
-      this.out = new DataOutputStream
-        (new BufferedOutputStream(socket.getOutputStream()));
+      this.in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
+      this.out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
       this.setDaemon(true);
-      this.setName("Server connection on port " + port + " from "
-                   + socket.getInetAddress().getHostAddress());
+      this.setName("Server connection on port " + port + " from " + socket.getInetAddress().getHostAddress());
     }
 
     public void run() {
@@ -206,9 +203,9 @@ public abstract class Server {
             callDequeued.notify();
           }
 
-          if (LOG.isLoggable(Level.FINE))
-            LOG.fine(getName() + ": has #" + call.id + " from " +
-                     call.connection.socket.getInetAddress().getHostAddress());
+          if (LOG.isLoggable(Level.FINE)){
+            LOG.fine(getName() + ": has #" + call.id + " from " + call.connection.socket.getInetAddress().getHostAddress());
+          }
           
           String error = null;
           Writable value = null;
